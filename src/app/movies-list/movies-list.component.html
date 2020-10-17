@@ -1,4 +1,4 @@
-<table class="table table-dark">
+<table class="table table-bordered table-dark">
     <thead>
         <tr>
             <th> </th>
@@ -6,29 +6,17 @@
             <th>Genero</th>
             <th>Director</th>
             <th>Duración</th>
+            <th>Año</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr *ngFor="let movie of movies" [ngClass]="{'actuales': movie.anio < 2010}">
             <th><img [src]="movie.imagen" [alt]="movie.nombre"></th>
-            <td>{{movie.nombre}}</td>
+            <td>{{movie.nombre | uppercase}}</td>
             <td>{{movie.genero}}</td>
             <td>{{movie.director}}</td>
             <td>{{movie.duracion}}</td>
-        </tr>
-        <tr>
-            <th><img src="" alt=""></th>
-            <td>Lo que el viento se llevo</td>
-            <td>Drama</td>
-            <td>Papeloni</td>
-            <td>2 hs</td>
-        </tr>
-        <tr>
-            <th><img src="" alt=""></th>
-            <td>Hombres de Honor</td>
-            <td>Drama</td>
-            <td>Zaraza</td>
-            <td>2 hs 43 min</td>
+            <td>{{movie.anio}}</td>
         </tr>
     </tbody>
 </table>
